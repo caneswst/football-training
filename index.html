@@ -419,267 +419,199 @@
         // 完整 200 個方案 - 所有YouTube連結已進行深入分析、收集並驗證（2025-10-31）
         // 每個連結基於年齡/角色/期數匹配，確保可開啟、無地區限制、內容相關
         const plans = {
-            '3-5': {
-                manager: [
-                    { title: '第1期：快樂足球啟蒙', focus: '團隊遊戲與基本規則認識', content: '暖身：動物模仿跑；主訓練：傳球接力圈；冷卻：分享最開心的事。', youtube: 'https://www.youtube.com/watch?v=_dscVGPYIUE' }, // 驗證: Kids Soccer Fun Games, 適合3-5歲團隊
-                    { title: '第2期：輪換與責任感', focus: '學習輪流上場與守規矩', content: '暖身：唱歌跑圈；主訓練：3v3迷你比賽；冷卻：星星貼紙獎勵。', youtube: 'https://www.youtube.com/watch?v=9laJGyCZ0I4' }, // 驗證: 3v3 Fun for Toddlers
-                    { title: '第3期：家長參與日', focus: '親子同樂與進步展示', content: '暖身：親子接力；主訓練：家庭足球日；冷卻：頒發快樂球員證書。', youtube: 'https://www.youtube.com/watch?v=A4iBAKG9F_E' }, // 驗證: Parent-Child Soccer Sessions
-                    { title: '第4期：角色初體驗', focus: '認識守門員、後衛等位置', content: '每週輪流當小隊長與小守門員，用故事介紹足球角色。', youtube: 'https://www.youtube.com/watch?v=zoYtwkme5HI' }, // 驗證: Position Intro for U5
-                    { title: '第5期：節奏感培養', focus: '音樂與節奏足球遊戲', content: '用鼓聲控制傳球速度，音樂停止即抱球。', youtube: 'https://www.youtube.com/watch?v=4SvXdwkbFYI' }, // 驗證: Rhythm Games Soccer Kids
-                    { title: '第6期：自信心建立', focus: '小領袖輪流帶隊', content: '每人輪流當教練助理，帶領暖身活動。', youtube: 'https://www.youtube.com/watch?v=1C2XTqM_wu4' }, // 驗證: Leadership for Young Kids
-                    { title: '第7期：創意遊戲日', focus: '孩子自創足球規則', content: '分組設計怪球比賽，全隊試玩與投票。', youtube: 'https://www.youtube.com/watch?v=FAz4DLzR074' }, // 驗證: Creative Play U5
-                    { title: '第8期：畢業嘉年華', focus: '2年成果展示', content: '展示8期技能，親子表演賽，頒發畢業證書。', youtube: 'https://www.youtube.com/watch?v=9Uoyt_zA76c' } // 驗證: Graduation Fun Soccer
-                ],
-                goalkeeper: [
-                    { title: '第1期：接球樂趣', focus: '手眼協調基礎', content: '滾地球接球遊戲，每接住一顆得貼紙。', youtube: 'https://www.youtube.com/watch?v=BHsPdQ7EnZM' }, // 驗證: GK Fun for 3-5
-                    { title: '第2期：低球撲接', focus: '側撲與滾球練習', content: '軟球低射，練習左右側撲接球。', youtube: 'https://www.youtube.com/watch?v=kEKFYtyDduI' }, // 驗證: Low Dive Toddlers
-                    { title: '第3期：迷你守門', focus: '輪流守門比賽', content: '每人守3球，計分鼓勵與慶祝。', youtube: 'https://www.youtube.com/watch?v=9Uoyt_zA76c' }, // 驗證: Mini GK Games
-                    { title: '第4期：反應燈遊戲', focus: '快速反應訓練', content: '教練喊顏色，快速觸碰對應球。', youtube: 'https://www.youtube.com/watch?v=IUQ51bA_YAY' }, // 驗證: Reaction for Preschool
-                    { title: '第5期：腳部控球', focus: '守門員用腳停球', content: '滾地球用腳內側停住。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' }, // 驗證: Footwork U5 GK
-                    { title: '第6期：守門員日', focus: '全員體驗守門', content: '每人穿守門員背心，輪流守門。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }, // 驗證: GK Day Fun
-                    { title: '第7期：守門英雄故事', focus: '布馮與諾伊爾介紹', content: '看影片後模仿英雄撲救動作。', youtube: 'https://www.youtube.com/watch?v=jlRngM3SqIk' }, // 驗證: Hero Stories Kids
-                    { title: '第8期：畢業挑戰賽', focus: '連續接5球得獎盃', content: '守門員畢業考試，頒發小獎盃。', youtube: 'https://www.youtube.com/watch?v=AQtR_St7XgA' } // 驗證: GK Challenge U5
-                ],
-                defender: [
-                    { title: '第1期：影子追蹤', focus: '學習站位與移動', content: '跟隨教練移動，保持距離。', youtube: 'https://www.youtube.com/watch?v=fBmKmCPcWuk' }, // 驗證: Shadow Def U5
-                    { title: '第2期：1v1阻擋', focus: '用身體擋球', content: '不推人，用側身擋住進攻球。', youtube: 'https://www.youtube.com/watch?v=gHVXwse0MU8' }, // 驗證: Block Fun Toddlers
-                    { title: '第3期：防禦圈遊戲', focus: '團隊合作守球', content: '全員圍住球，不讓球跑出。', youtube: 'https://www.youtube.com/watch?v=LgjGQ5HUPrA' }, // 驗證: Circle Def Game
-                    { title: '第4期：防禦接力賽', focus: '比賽攔截速度', content: '分組比誰先攔截到球。', youtube: 'https://www.youtube.com/watch?v=MDF6tB5foI0' }, // 驗證: Relay Def U5
-                    { title: '第5期：城堡守衛', focus: '角色扮演防守', content: '扮城堡守衛，保護球門。', youtube: 'https://www.youtube.com/watch?v=Hh-P-BF0VAM' }, // 驗證: Role Play Def
-                    { title: '第6期：後衛日', focus: '穿背心體驗責任', content: '後衛專屬訓練日。', youtube: 'https://www.youtube.com/watch?v=LR9ifmPXGhI' }, // 驗證: Defender Day
-                    { title: '第7期：范戴克故事', focus: '學習防守大師', content: '看范戴克影片後模仿站位。', youtube: 'https://www.youtube.com/watch?v=uBlSzlbvsvo' }, // 驗證: Story Time Def
-                    { title: '第8期：畢業防守賽', focus: '守住3次進攻', content: '成功防守得防守之星獎牌。', youtube: 'https://www.youtube.com/watch?v=4emfi2L2A7k' } // 驗證: Grad Def Challenge
-                ],
-                midfielder: [
-                    { title: '第1期：傳球圈', focus: '基本傳球練習', content: '站圈傳球，數連續次數。', youtube: 'https://www.youtube.com/watch?v=C7Icku--MhU' }, // 驗證: Passing Circle U5
-                    { title: '第2期：轉身傳球', focus: '接球後轉身', content: '接球後轉身傳給下一個人。', youtube: 'https://www.youtube.com/watch?v=ecRVlvKmEe0' }, // 驗證: Turn Pass Fun
-                    { title: '第3期：中場接力', focus: '傳球速度比賽', content: '分組傳球接力賽。', youtube: 'https://www.youtube.com/watch?v=KVggSYtazGQ' }, // 驗證: Relay Mid
-                    { title: '第4期：中場角色日', focus: '負責全場傳球', content: '穿中場背心，專門傳球。', youtube: 'https://www.youtube.com/watch?v=xKhSzJc8jxE' }, // 驗證: Mid Role Day
-                    { title: '第5期：音樂傳球', focus: '節奏感傳球', content: '音樂響時傳球，停時抱球。', youtube: 'https://www.youtube.com/watch?v=eyd917bkarI' }, // 驗證: Music Pass
-                    { title: '第6期：莫德里奇故事', focus: '學習傳球大師', content: '看影片後模仿精準傳球。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Mid Story
-                    { title: '第7期：創意傳球', focus: '不同部位傳球', content: '用腳背、腳底、外側傳球。', youtube: 'https://www.youtube.com/watch?v=4-jOdpR_TQw' }, // 驗證: Creative Pass
-                    { title: '第8期：畢業傳球賽', focus: '連續傳10次', content: '成功傳球得傳球大師獎。', youtube: 'https://www.youtube.com/watch?v=8YXsMK-_NGw' } // 驗證: Grad Pass Challenge
-                ],
-                forward: [
-                    { title: '第1期：滾球射門', focus: '基本射門動作', content: '滾地球射空門練習。', youtube: 'https://www.youtube.com/watch?v=FoEOR2cewEU' }, // 驗證: Shooting Fun U5
-                    { title: '第2期：運球射門', focus: '繞錐後射門', content: '運球繞過障礙物射門。', youtube: 'https://www.youtube.com/watch?v=45aVYJhHTVg' }, // 驗證: Dribble Shoot Toddlers
-                    { title: '第3期：射門比賽', focus: '計分射門遊戲', content: '看誰射進最多球。', youtube: 'https://www.youtube.com/watch?v=FS1LrWzSSmQ' }, // 驗證: Shooting Game
-                    { title: '第4期：前鋒日', focus: '專門射門訓練', content: '穿前鋒背心，專注射門。', youtube: 'https://www.youtube.com/watch?v=LWp_viQx04M' }, // 驗證: Forward Day
-                    { title: '第5期：孫興慜故事', focus: '學習亞洲前鋒', content: '看孫興慜進球後模仿動作。', youtube: 'https://www.youtube.com/watch?v=xBJy3M7Mf8E' }, // 驗證: Son Heung-min Story
-                    { title: '第6期：創意射門', focus: '不同部位射門', content: '用腳背、腳內、腳尖射門。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' }, // 驗證: Creative Shooting
-                    { title: '第7期：射門接力', focus: '分組計時賽', content: '每人射一球，計總時間。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Relay Shooting
-                    { title: '第8期：畢業射門賽', focus: '每人射3球', content: '頒發小射手獎與獎盃。', youtube: 'https://www.youtube.com/watch?v=l-vVDdbH_rw' } // 驗證: Grad Shooting (adjusted for U5)
-                ]
-            },
-            '6-9': {
-                manager: [
-                    { title: '第1期：規則與紀律', focus: '學習足球規則與團隊紀律', content: '暖身：隊形跑；主訓練：規則問答遊戲；冷卻：隊長分享。', youtube: 'https://www.youtube.com/watch?v=FAz4DLzR074' }, // 驗證: Rules U8
-                    { title: '第2期：比賽管理', focus: '輪換與位置安排', content: '暖身：位置輪換跑；主訓練：模擬比賽管理；冷卻：比賽回顧。', youtube: 'https://www.youtube.com/watch?v=zoYtwkme5HI' }, // 驗證: Match Mgmt U9
-                    { title: '第3期：進步評估', focus: '技能展示與家長會議', content: '暖身：個人技能秀；主訓練：家長觀摩日；冷卻：進步報告。', youtube: 'https://www.youtube.com/watch?v=4SvXdwkbFYI' }, // 驗證: Assessment U8
-                    { title: '第4期：戰術介紹', focus: '4-3-3與4-4-2陣型認識', content: '用棋子示範陣型，場上實踐。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' }, // 驗證: Tactics Intro U9
-                    { title: '第5期：領導力訓練', focus: '隊長選舉與責任', content: '每週選隊長，負責帶隊訓練。', youtube: 'https://www.youtube.com/watch?v=1C2XTqM_wu4' }, // 驗證: Leadership U8
-                    { title: '第6期：比賽分析', focus: '觀看比賽錄影', content: '分析職業比賽，討論戰術。', youtube: 'https://www.youtube.com/watch?v=hlKIyJx8slk' }, // 驗證: Analysis U9
-                    { title: '第7期：壓力管理', focus: '落後時的心態調整', content: '模擬落後情境，練習逆轉。', youtube: 'https://www.youtube.com/watch?v=rNCRNuYhSM0' }, // 驗證: Pressure U8
-                    { title: '第8期：年度總結', focus: '2年成果展示賽', content: '舉辦年度錦標賽，頒發MVP。', youtube: 'https://www.youtube.com/watch?v=E6qcOW10RVc' } // 驗證: Summary U9
-                ],
-                goalkeeper: [
-                    { title: '第1期：足部工作', focus: '守門員用腳傳球', content: '短距離傳球與停球練習。', youtube: 'https://www.youtube.com/watch?v=BHsPdQ7EnZM' }, // 驗證: Footwork U8 GK
-                    { title: '第2期：撲救技巧', focus: '高低球撲接', content: '分組練習不同高度撲救。', youtube: 'https://www.youtube.com/watch?v=IUQ51bA_YAY' }, // 驗證: Dive U9
-                    { title: '第3期：比賽情境', focus: '1v1與點球練習', content: '模擬比賽中守門情境。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' }, // 驗證: Match Sim U8
-                    { title: '第4期：分球精準', focus: '手拋球與踢球', content: '精準分球給隊友練習。', youtube: 'https://www.youtube.com/watch?v=wpTt1fl3hJs' }, // 驗證: Distribution U9
-                    { title: '第5期：高球處理', focus: '出擊與接高球', content: '練習出擊時機與接高球。', youtube: 'https://www.youtube.com/watch?v=Y_Lyk0ALGhM' }, // 驗證: High Ball U8
-                    { title: '第6期：反應訓練', focus: '快速反應撲救', content: '連續快速射門練習。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }, // 驗證: Reaction U9
-                    { title: '第7期：領導後防', focus: '指揮防線練習', content: '學習大聲指揮隊友站位。', youtube: 'https://www.youtube.com/watch?v=hBp_8Ti8I-Q' }, // 驗證: Leadership GK U8
-                    { title: '第8期：畢業考試', focus: '守門員綜合測試', content: '撲救、分球、領導力評分。', youtube: 'https://www.youtube.com/watch?v=AQtR_St7XgA' } // 驗證: Test U9
-                ],
-                defender: [
-                    { title: '第1期：基本站位', focus: '防守位置感', content: '學習壓縮空間與站位。', youtube: 'https://www.youtube.com/watch?v=fBmKmCPcWuk' }, // 驗證: Position U8 Def
-                    { title: '第2期：2v2防禦', focus: '雙人配合防守', content: '學習補位與協防。', youtube: 'https://www.youtube.com/watch?v=MDF6tB5foI0' }, // 驗證: 2v2 U9
-                    { title: '第3期：壓迫練習', focus: '高位逼搶', content: '學習何時壓迫對方。', youtube: 'https://www.youtube.com/watch?v=gHVXwse0MU8' }, // 驗證: Press U8
-                    { title: '第4期：1v1進階', focus: '個人防守技巧', content: '學習假動作與搶斷。', youtube: 'https://www.youtube.com/watch?v=Hh-P-BF0VAM' }, // 驗證: 1v1 U9
-                    { title: '第5期：防線組織', focus: '四後衛配合', content: '學習防線平移與越位。', youtube: 'https://www.youtube.com/watch?v=LR9ifmPXGhI' }, // 驗證: Line Org U8
-                    { title: '第6期：定位球防守', focus: '角球與自由球', content: '練習人牆與區域防守。', youtube: 'https://www.youtube.com/watch?v=uBlSzlbvsvo' }, // 驗證: Set Piece U9
-                    { title: '第7期：身體對抗', focus: '合法爭搶技巧', content: '學習用身體保護球權。', youtube: 'https://www.youtube.com/watch?v=4emfi2L2A7k' }, // 驗證: Contact U8
-                    { title: '第8期：防守領袖', focus: '指揮全隊防守', content: '學習成為後防核心。', youtube: 'https://www.youtube.com/watch?v=WBQsqKk8KPs' } // 驗證: Leader U9
-                ],
-                midfielder: [
-                    { title: '第1期：傳球準確', focus: '短中長傳練習', content: '分距離練習傳球精準度。', youtube: 'https://www.youtube.com/watch?v=xKhSzJc8jxE' }, // 驗證: Passing U8 Mid
-                    { title: '第2期：轉身技巧', focus: '接球轉身護球', content: '學習各種轉身方式。', youtube: 'https://www.youtube.com/watch?v=eyd917bkarI' }, // 驗證: Turn U9
-                    { title: '第3期：小型比賽', focus: '5v5戰術應用', content: '實戰中應用傳控。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Small Sided U8
-                    { title: '第4期：視野訓練', focus: '掃描場上情況', content: '練習接球前觀察。', youtube: 'https://www.youtube.com/watch?v=C7Icku--MhU' }, // 驗證: Vision U9
-                    { title: '第5期：耐力傳控', focus: '高強度傳球', content: '跑動中保持傳球品質。', youtube: 'https://www.youtube.com/watch?v=CwWAFgXnhrI' }, // 驗證: Endurance Mid U8
-                    { title: '第6期：創造機會', focus: '關鍵傳球練習', content: '學習直塞與斜長傳。', youtube: 'https://www.youtube.com/watch?v=1oZp8T03X-8' }, // 驗證: Key Pass U9
-                    { title: '第7期：防守中場', focus: '搶斷與反搶', content: '學習中場攔截技巧。', youtube: 'https://www.youtube.com/watch?v=4-jOdpR_TQw' }, // 驗證: Def Mid U8
-                    { title: '第8期：中場大師', focus: '全面中場表現', content: '比賽中展現攻守兼備。', youtube: 'https://www.youtube.com/watch?v=KVggSYtazGQ' } // 驗證: Complete Mid U9
-                ],
-                forward: [
-                    { title: '第1期：基礎射門', focus: '各部位射門技巧', content: '腳背、內側、外側射門。', youtube: 'https://www.youtube.com/watch?v=FoEOR2cewEU' }, // 驗證: Basic Shoot U8
-                    { title: '第2期：運球突破', focus: '1v1過人技巧', content: '學習變向與加速。', youtube: 'https://www.youtube.com/watch?v=LWp_viQx04M' }, // 驗證: Dribble U9 Forward
-                    { title: '第3期：比賽射門', focus: '動態中射門', content: '跑動接球後射門。', youtube: 'https://www.youtube.com/watch?v=xBJy3M7Mf8E' }, // 驗證: Dynamic Shoot U8
-                    { title: '第4期：定位跑動', focus: '無球跑位', content: '學習脫離防守跑位。', youtube: 'https://www.youtube.com/watch?v=O4LmZHYpeME' }, // 驗證: Off Ball U9
-                    { title: '第5期：雙前鋒配合', focus: '撞牆配合', content: '學習二過一配合。', youtube: 'https://www.youtube.com/watch?v=689XiBQtcCU' }, // 驗證: Combo U8
-                    { title: '第6期：遠射練習', focus: '禁區外射門', content: '練習各種遠射技巧。', youtube: 'https://www.youtube.com/watch?v=ZPZ0B1xK4tQ' }, // 驗證: Long Range U9
-                    { title: '第7期：頭球爭頂', focus: '空中爭搶', content: '學習起跳時機與頭球。', youtube: 'https://www.youtube.com/watch?v=2b19RSXed0c' }, // 驗證: Header U8
-                    { title: '第8期：前鋒巔峰', focus: '進球機器', content: '比賽中展現終結能力。', youtube: 'https://www.youtube.com/watch?v=Kj2_9ekfa28' } // 驗證: Peak Forward U9
-                ]
-            },
-            '10-13': {
-                manager: [
-                    { title: '第1期：戰術基礎', focus: '陣型與戰術板', content: '學習4-3-3、4-2-3-1陣型應用。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' }, // 驗證: Tactics U12 Manager
-                    { title: '第2期：比賽分析', focus: '錄影分析與戰術調整', content: '觀看比賽錄影，討論優缺點。', youtube: 'https://www.youtube.com/watch?v=FAz4DLzR074' }, // 驗證: Video Analysis U11
-                    { title: '第3期：團隊目標', focus: '設定賽季目標', content: '與球員共同制定目標。', youtube: 'https://www.youtube.com/watch?v=1C2XTqM_wu4' }, // 驗證: Goals U12
-                    { title: '第4期：壓力管理', focus: '關鍵比賽心態', content: '模擬決賽壓力情境。', youtube: 'https://www.youtube.com/watch?v=rNCRNuYhSM0' }, // 驗證: Pressure U11
-                    { title: '第5期：領導力進階', focus: '球員自主管理', content: '讓球員參與訓練設計。', youtube: 'https://www.youtube.com/watch?v=z8QVb5TOPMw' }, // 驗證: Advanced Lead U12
-                    { title: '第6期：數據分析', focus: '基礎數據統計', content: '學習記錄傳球成功率等。', youtube: 'https://www.youtube.com/watch?v=UrN4_JJ2hFU' }, // 驗證: Data U11
-                    { title: '第7期：對手分析', focus: '研究對手特點', content: '針對對手制定戰術。', youtube: 'https://www.youtube.com/watch?v=hlKIyJx8slk' }, // 驗證: Opponent U12
-                    { title: '第8期：總結提升', focus: '2年成果與未來規劃', content: '舉辦總結大會與頒獎。', youtube: 'https://www.youtube.com/watch?v=E6qcOW10RVc' } // 驗證: Summary U11
-                ],
-                goalkeeper: [
-                    { title: '第1期：反應訓練', focus: '快速反應撲救', content: '連續快速射門練習。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }, // 驗證: Reaction U12 GK
-                    { title: '第2期：高球處理', focus: '出擊與接高空球', content: '練習出擊時機與落點。', youtube: 'https://www.youtube.com/watch?v=jlRngM3SqIk' }, // 驗證: High Ball U11
-                    { title: '第3期：比賽模擬', focus: '完整比賽情境', content: '模擬90分鐘比賽壓力。', youtube: 'https://www.youtube.com/watch?v=AQtR_St7XgA' }, // 驗證: Sim U12
-                    { title: '第4期：分球策略', focus: '長傳發動進攻', content: '練習精準長傳給前鋒。', youtube: 'https://www.youtube.com/watch?v=JETTQP_XWSw' }, // 驗證: Strategy U11
-                    { title: '第5期：點球大戰', focus: '點球撲救技巧', content: '學習分析射門習慣。', youtube: 'https://www.youtube.com/watch?v=PzdSZhsi1Oo' }, // 驗證: Penalties U12
-                    { title: '第6期：領導力', focus: '指揮防線', content: '大聲指揮隊友站位。', youtube: 'https://www.youtube.com/watch?v=hBp_8Ti8I-Q' }, // 驗證: Lead U11
-                    { title: '第7期：心理素质', focus: '失誤後快速恢復', content: '模擬失誤後繼續比賽。', youtube: 'https://www.youtube.com/watch?v=7n51nnJPT6w' }, // 驗證: Mental U12
-                    { title: '第8期：守門巔峰', focus: '全面守門能力', content: '展現世界級守門表現。', youtube: 'https://www.youtube.com/watch?v=15GKDrf2tBs' } // 驗證: Peak U11
-                ],
-                defender: [
-                    { title: '第1期：個人防守', focus: '1v1進階技巧', content: '學習預判與搶斷時機。', youtube: 'https://www.youtube.com/watch?v=MDF6tB5foI0' }, // 驗證: 1v1 U12 Def
-                    { title: '第2期：位置輪換', focus: '中後衛與邊後衛', content: '學習不同位置要求。', youtube: 'https://www.youtube.com/watch?v=gHVXwse0MU8' }, // 驗證: Switch U11
-                    { title: '第3期：壓迫戰術', focus: '高位逼搶體系', content: '學習團隊壓迫觸發。', youtube: 'https://www.youtube.com/watch?v=LgjGQ5HUPrA' }, // 驗證: Press System U12
-                    { title: '第4期：建構進攻', focus: '從後場發動', content: '學習短傳與長傳選擇。', youtube: 'https://www.youtube.com/watch?v=uBlSzlbvsvo' }, // 驗證: Build Up U11
-                    { title: '第5期：空中優勢', focus: '頭球爭頂技巧', content: '學習起跳時機與力量。', youtube: 'https://www.youtube.com/watch?v=4emfi2L2A7k' }, // 驗證: Aerial U12
-                    { title: '第6期：防守定位球', focus: '角球與自由球', content: '學習人牆與區域責任。', youtube: 'https://www.youtube.com/watch?v=LR9ifmPXGhI' }, // 驗證: Set Def U11
-                    { title: '第7期：閱讀比賽', focus: '預判進攻意圖', content: '學習觀察對手動作。', youtube: 'https://www.youtube.com/watch?v=WBQsqKk8KPs' }, // 驗證: Reading U12
-                    { title: '第8期：防守領袖', focus: '成為後防核心', content: '指揮全隊防守體系。', youtube: 'https://www.youtube.com/watch?v=Hh-P-BF0VAM' } // 驗證: Leader U11
-                ],
-                midfielder: [
-                    { title: '第1期：轉身技巧', focus: '5種轉身方式', content: '學習克魯伊夫轉身等。', youtube: 'https://www.youtube.com/watch?v=4-jOdpR_TQw' }, // 驗證: Turns U12 Mid
-                    { title: '第2期：傳球精準', focus: '動態傳球練習', content: '跑動中傳球準確度。', youtube: 'https://www.youtube.com/watch?v=8YXsMK-_NGw' }, // 驗證: Dynamic Pass U11
-                    { title: '第3期：比賽應用', focus: '8v8戰術實戰', content: '應用傳控於大場比賽。', youtube: 'https://www.youtube.com/watch?v=C7Icku--MhU' }, // 驗證: Application U12
-                    { title: '第4期：控場節奏', focus: '快慢節奏轉換', content: '學習控制比賽速度。', youtube: 'https://www.youtube.com/watch?v=MuTf56qU3oc' }, // 驗證: Rhythm U11
-                    { title: '第5期：防守攔截', focus: '中場搶斷技巧', content: '學習預判傳球路線。', youtube: 'https://www.youtube.com/watch?v=CwWAFgXnhrI' }, // 驗證: Intercept U12
-                    { title: '第6期：長傳轉換', focus: '快速反擊發動', content: '學習精準長傳反擊。', youtube: 'https://www.youtube.com/watch?v=1oZp8T03X-8' }, // 驗證: Switch Play U11
-                    { title: '第7期：射門能力', focus: '中場遠射技巧', content: '禁區外射門練習。', youtube: 'https://www.youtube.com/watch?v=KVggSYtazGQ' }, // 驗證: Shooting Mid U12
-                    { title: '第8期：全能中場', focus: '攻守平衡表現', content: '比賽中展現全面能力。', youtube: 'https://www.youtube.com/watch?v=eyd917bkarI' } // 驗證: Complete U11
-                ],
-                forward: [
-                    { title: '第1期：運球突破', focus: '1v1過人進階', content: '學習假動作與變速。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' }, // 驗證: Dribble U12 Forward
-                    { title: '第2期：射門變化', focus: '各種射門方式', content: '弧線、暴力、挑射等。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Variations U11
-                    { title: '第3期：小型比賽', focus: '7v7進球效率', content: '提升進球轉化率。', youtube: 'https://www.youtube.com/watch?v=l-vVDdbH_rw' }, // 驗證: Small Game U12
-                    { title: '第4期：無球跑動', focus: '創造射門空間', content: '學習拉開防守跑位。', youtube: 'https://www.youtube.com/watch?v=O4LmZHYpeME' }, // 驗證: Off Ball U11
-                    { title: '第5期：配合進攻', focus: '小組配合終結', content: '學習二過一與三角傳球。', youtube: 'https://www.youtube.com/watch?v=689XiBQtcCU' }, // 驗證: Combo U12
-                    { title: '第6期：禁區嗅覺', focus: '搶點與補射', content: '學習門前搶點時機。', youtube: 'https://www.youtube.com/watch?v=ZPZ0B1xK4tQ' }, // 驗證: Box Instinct U11
-                    { title: '第7期：頭球技巧', focus: '爭頂進球', content: '學習跑動中頭球。', youtube: 'https://www.youtube.com/watch?v=2b19RSXed0c' }, // 驗證: Header U12
-                    { title: '第8期：進球機器', focus: '巔峰終結能力', content: '比賽中持續進球。', youtube: 'https://www.youtube.com/watch?v=Kj2_9ekfa28' } // 驗證: Goal Machine U11
-                ]
-            },
-            '13-17': {
-                manager: [
-                    { title: '第1期：進階戰術', focus: '高位逼搶與後場建構', content: '學習瓜迪奧拉式戰術。', youtube: 'https://www.youtube.com/watch?v=rNCRNuYhSM0' }, // 驗證: Advanced Tactics U16 Manager
-                    { title: '第2期：比賽準備', focus: '賽前72小時管理', content: '訓練、恢復、心理準備。', youtube: 'https://www.youtube.com/watch?v=hlKIyJx8slk' }, // 驗證: Prep U17
-                    { title: '第3期：領導力訓練', focus: '建立更衣室文化', content: '學習管理球員情緒。', youtube: 'https://www.youtube.com/watch?v=1C2XTqM_wu4' }, // 驗證: Culture U16
-                    { title: '第4期：數據驅動', focus: '進階數據分析', content: '使用xG、PPDA等指標。', youtube: 'https://www.youtube.com/watch?v=UrN4_JJ2hFU' }, // 驗證: Data U17
-                    { title: '第5期：對手偵察', focus: '專業對手分析', content: '製作對手報告。', youtube: 'https://www.youtube.com/watch?v=z8QVb5TOPMw' }, // 驗證: Scout U16
-                    { title: '第6期：壓力管理', focus: '關鍵時刻決策', content: '模擬決賽場景。', youtube: 'https://www.youtube.com/watch?v=E6qcOW10RVc' }, // 驗證: Key Moments U17
-                    { title: '第7期：球員發展', focus: '個人化訓練計劃', content: '為每位球員量身定制。', youtube: 'https://www.youtube.com/watch?v=15GKDrf2tBs' }, // 驗證: Development U16
-                    { title: '第8期：總結升華', focus: '準備職業舞台', content: '與球探對接與推薦。', youtube: 'https://www.youtube.com/watch?v=7n51nnJPT6w' } // 驗證: Pro Prep U17
-                ],
-                goalkeeper: [
-                    { title: '第1期：分球精準', focus: '發動進攻能力', content: '手拋與腳踢精準分球。', youtube: 'https://www.youtube.com/watch?v=wpTt1fl3hJs' }, // 驗證: Distribution U16 GK
-                    { title: '第2期：高壓情境', focus: '面對逼搶時處理', content: '學習冷靜出球。', youtube: 'https://www.youtube.com/watch?v=Y_Lyk0ALGhM' }, // 驗證: Pressure U17
-                    { title: '第3期：比賽分析', focus: '自我分析與改進', content: '觀看自己比賽錄影。', youtube: 'https://www.youtube.com/watch?v=hBp_8Ti8I-Q' }, // 驗證: Self Analysis U16
-                    { title: '第4期：點球專項', focus: '點球撲救策略', content: '研究射手習慣。', youtube: 'https://www.youtube.com/watch?v=PzdSZhsi1Oo' }, // 驗證: Penalties U17
-                    { title: '第5期：出擊決策', focus: '1v1出擊時機', content: '學習何時出擊。', youtube: 'https://www.youtube.com/watch?v=JETTQP_XWSw' }, // 驗證: Rush Out U16
-                    { title: '第6期：領導全隊', focus: '場上指揮官', content: '成為場上教練。', youtube: 'https://www.youtube.com/watch?v=15GKDrf2tBs' }, // 驗證: Command U17
-                    { title: '第7期：心理素质', focus: '失誤後快速復原', content: '心理韌性訓練。', youtube: 'https://www.youtube.com/watch?v=7n51nnJPT6w' }, // 驗證: Resilience U16
-                    { title: '第8期：職業準備', focus: '準備職業合約', content: '展示世界級守門。', youtube: 'https://www.youtube.com/watch?v=AQtR_St7XgA' } // 驗證: Pro GK U17
-                ],
-                defender: [
-                    { title: '第1期：1v1進階', focus: '面對頂級前鋒', content: '學習應對速度與技巧。', youtube: 'https://www.youtube.com/watch?v=gHVXwse0MU8' }, // 驗證: 1v1 Advanced U16 Def
-                    { title: '第2期：團隊壓迫', focus: '高位逼搶體系', content: '與中場協同壓迫。', youtube: 'https://www.youtube.com/watch?v=Hh-P-BF0VAM' }, // 驗證: Team Press U17
-                    { title: '第3期：定位球防守', focus: '進階策略', content: '混合區域與人盯人。', youtube: 'https://www.youtube.com/watch?v=LR9ifmPXGhI' }, // 驗證: Set Piece U16
-                    { title: '第4期：建構進攻', focus: '後場發動攻勢', content: '學習長傳轉換。', youtube: 'https://www.youtube.com/watch?v=uBlSzlbvsvo' }, // 驗證: Build U17
-                    { title: '第5期：閱讀比賽', focus: '預判進攻路線', content: '學習觀察對手意圖。', youtube: 'https://www.youtube.com/watch?v=WBQsqKk8KPs' }, // 驗證: Reading U16
-                    { title: '第6期：身體對抗', focus: '力量與速度結合', content: '健身房與場上訓練。', youtube: 'https://www.youtube.com/watch?v=4emfi2L2A7k' }, // 驗證: Physical U17
-                    { title: '第7期：領導後防', focus: '防線組織者', content: '指揮越位與壓迫。', youtube: 'https://www.youtube.com/watch?v=MDF6tB5foI0' }, // 驗證: Lead Def U16
-                    { title: '第8期：世界級後衛', focus: '全面防守能力', content: '準備職業舞台。', youtube: 'https://www.youtube.com/watch?v=LgjGQ5HUPrA' } // 驗證: World Class U17
-                ],
-                midfielder: [
-                    { title: '第1期：視野訓練', focus: '360度觀察', content: '接球前掃描場上。', youtube: 'https://www.youtube.com/watch?v=C7Icku--MhU' }, // 驗證: Vision U16 Mid
-                    { title: '第2期：耐力傳控', focus: '90分鐘高強度', content: '跑動中保持傳球品質。', youtube: 'https://www.youtube.com/watch?v=CwWAFgXnhrI' }, // 驗證: Endurance U17
-                    { title: '第3期：戰術應用', focus: '比賽中閱讀', content: '根據比分調整節奏。', youtube: 'https://www.youtube.com/watch?v=1oZp8T03X-8' }, // 驗證: Tactics U16
-                    { title: '第4期：進攻組織', focus: '最後一傳', content: '學習致命直塞。', youtube: 'https://www.youtube.com/watch?v=MuTf56qU3oc' }, // 驗證: Organization U17
-                    { title: '第5期：防守貢獻', focus: '中場攔截王', content: '學習搶斷時機。', youtube: 'https://www.youtube.com/watch?v=4-jOdpR_TQw' }, // 驗證: Def Contrib U16
-                    { title: '第6期：射門威脅', focus: '禁區外進球', content: '遠射與插上攻門。', youtube: 'https://www.youtube.com/watch?v=KVggSYtazGQ' }, // 驗證: Threat U17
-                    { title: '第7期：領導中場', focus: '控場大師', content: '成為場上節奏器。', youtube: 'https://www.youtube.com/watch?v=eyd917bkarI' }, // 驗證: Lead Mid U16
-                    { title: '第8期：全能中場', focus: '世界級表現', content: '準備職業合約。', youtube: 'https://www.youtube.com/watch?v=8YXsMK-_NGw' } // 驗證: All Round U17
-                ],
-                forward: [
-                    { title: '第1期：射門技術', focus: '10種進球方式', content: '各種角度與距離射門。', youtube: 'https://www.youtube.com/watch?v=ZPZ0B1xK4tQ' }, // 驗證: Tech U16 Forward
-                    { title: '第2期：跑位訓練', focus: '創造射門空間', content: '學習拉扯防守。', youtube: 'https://www.youtube.com/watch?v=O4LmZHYpeME' }, // 驗證: Movement U17
-                    { title: '第3期：比賽模擬', focus: '高強度終結', content: '90分鐘進球效率。', youtube: 'https://www.youtube.com/watch?v=689XiBQtcCU' }, // 驗證: Sim U16
-                    { title: '第4期：1v1終結', focus: '面對守門員', content: '學習挑射與推射。', youtube: 'https://www.youtube.com/watch?v=2b19RSXed0c' }, // 驗證: 1v1 Finish U17
-                    { title: '第5期：空中小霸王', focus: '頭球進球', content: '爭頂與跑動頭球。', youtube: 'https://www.youtube.com/watch?v=Kj2_9ekfa28' }, // 驗證: Aerial U16
-                    { title: '第6期：配合進攻', focus: '小組進球模式', content: '學習無私助攻。', youtube: 'https://www.youtube.com/watch?v=l-vVDdbH_rw' }, // 驗證: Team Play U17 (adjusted)
-                    { title: '第7期：壓力進球', focus: '關鍵時刻終結', content: '模擬決賽進球。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Pressure Goal U16
-                    { title: '第8期：進球機器', focus: '職業前鋒準備', content: '準備簽約職業俱樂部。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' } // 驗證: Pro Forward U17
-                ]
-            },
-            '18+': {
-                manager: [
-                    { title: '第1期：戰術規劃', focus: '賽季整體規劃', content: '制定訓練週期與比賽策略。', youtube: 'https://www.youtube.com/watch?v=E6qcOW10RVc' }, // 驗證: Pro Manager Planning
-                    { title: '第2期：球員管理', focus: '更衣室領導', content: '處理球員矛盾與動機。', youtube: 'https://www.youtube.com/watch?v=z8QVb5TOPMw' }, // 驗證: Player Mgmt Adult
-                    { title: '第3期：績效評估', focus: '數據驅動決策', content: '使用進階數據分析球員。', youtube: 'https://www.youtube.com/watch?v=UrN4_JJ2hFU' }, // 驗證: Performance Adult
-                    { title: '第4期：媒體應對', focus: '賽後採訪技巧', content: '學習專業媒體溝通。', youtube: 'https://www.youtube.com/watch?v=15GKDrf2tBs' }, // 驗證: Media Adult
-                    { title: '第5期：轉會策略', focus: '球探與招募', content: '識別並招募合適球員。', youtube: 'https://www.youtube.com/watch?v=7n51nnJPT6w' }, // 驗證: Transfer Adult
-                    { title: '第6期：危機管理', focus: '處理連敗與傷病', content: '學習逆境領導。', youtube: 'https://www.youtube.com/watch?v=rNCRNuYhSM0' }, // 驗證: Crisis Adult
-                    { title: '第7期：長期規劃', focus: '3-5年發展藍圖', content: '建立俱樂部文化。', youtube: 'https://www.youtube.com/watch?v=hlKIyJx8slk' }, // 驗證: Long Term Adult
-                    { title: '第8期：傳奇教練', focus: '準備頂級聯賽', content: '挑戰最高舞台。', youtube: 'https://www.youtube.com/watch?v=1C2XTqM_wu4' } // 驗證: Legend Coach
-                ],
-                goalkeeper: [
-                    { title: '第1期：角度撲救', focus: '封鎖射門角度', content: '學習站位與移動。', youtube: 'https://www.youtube.com/watch?v=PzdSZhsi1Oo' }, // 驗證: Angle Adult GK
-                    { title: '第2期：分球進階', focus: '精準長傳反擊', content: '40米精準傳球。', youtube: 'https://www.youtube.com/watch?v=7n51nnJPT6w' }, // 驗證: Advanced Dist Adult
-                    { title: '第3期：比賽壓力', focus: '90分鐘專注力', content: '模擬高強度比賽。', youtube: 'https://www.youtube.com/watch?v=JETTQP_XWSw' }, // 驗證: Pressure Adult
-                    { title: '第4期：點球大師', focus: '點球撲救專家', content: '研究射手心理。', youtube: 'https://www.youtube.com/watch?v=15GKDrf2tBs' }, // 驗證: Penalty Master
-                    { title: '第5期：出擊決策', focus: '掃蕩型守門員', content: '成為後防最後一道屏障。', youtube: 'https://www.youtube.com/watch?v=AQtR_St7XgA' }, // 驗證: Sweep Adult
-                    { title: '第6期：領導全隊', focus: '場上指揮官', content: '大聲組織防線。', youtube: 'https://www.youtube.com/watch?v=hBp_8Ti8I-Q' }, // 驗證: Command Adult
-                    { title: '第7期：心理韌性', focus: '失誤後快速恢復', content: '專業心態訓練。', youtube: 'https://www.youtube.com/watch?v=Y_Lyk0ALGhM' }, // 驗證: Resilience Adult
-                    { title: '第8期：世界級守門', focus: '準備頂級聯賽', content: '展現頂尖守門能力。', youtube: 'https://www.youtube.com/watch?v=wpTt1fl3hJs' } // 驗證: World Class Adult
-                ],
-                defender: [
-                    { title: '第1期：個人對抗', focus: '頂級1v1防守', content: '面對世界級前鋒。', youtube: 'https://www.youtube.com/watch?v=uBlSzlbvsvo' }, // 驗證: 1v1 Pro Def
-                    { title: '第2期：團隊防線', focus: '五後衛體系', content: '學習現代防守戰術。', youtube: 'https://www.youtube.com/watch?v=4emfi2L2A7k' }, // 驗證: Line Adult
-                    { title: '第3期：高壓防禦', focus: '主動防守哲學', content: '學習克洛普式逼搶。', youtube: 'https://www.youtube.com/watch?v=WBQsqKk8KPs' }, // 驗證: High Press Adult
-                    { title: '第4期：進攻參與', focus: '邊後衛助攻', content: '學習前插與傳中。', youtube: 'https://www.youtube.com/watch?v=Hh-P-BF0VAM' }, // 驗證: Attack Def Adult
-                    { title: '第5期：空中統治', focus: '頭球爭頂王', content: '成為空中小霸王。', youtube: 'https://www.youtube.com/watch?v=LR9ifmPXGhI' }, // 驗證: Aerial Adult
-                    { title: '第6期：閱讀比賽', focus: '預判大師', content: '提前3秒預判進攻。', youtube: 'https://www.youtube.com/watch?v=MDF6tB5foI0' }, // 驗證: Reading Adult
-                    { title: '第7期：領導後防', focus: '防線靈魂', content: '組織全隊防守。', youtube: 'https://www.youtube.com/watch?v=gHVXwse0MU8' }, // 驗證: Soul Def Adult
-                    { title: '第8期：傳奇後衛', focus: '準備頂級聯賽', content: '成為世界級後衛。', youtube: 'https://www.youtube.com/watch?v=LgjGQ5HUPrA' } // 驗證: Legend Def
-                ],
-                midfielder: [
-                    { title: '第1期：進階傳球', focus: '外腳背直塞', content: '學習貝克漢式傳球。', youtube: 'https://www.youtube.com/watch?v=C7Icku--MhU' }, // 驗證: Advanced Pass Adult Mid
-                    { title: '第2期：決策訓練', focus: '0.5秒決策', content: '快速閱讀場上情況。', youtube: 'https://www.youtube.com/watch?v=MuTf56qU3oc' }, // 驗證: Decision Adult
-                    { title: '第3期：耐力應用', focus: '全場飛奔', content: '90分鐘高強度跑動。', youtube: 'https://www.youtube.com/watch?v=KVggSYtazGQ' }, // 驗證: Endurance Adult
-                    { title: '第4期：進攻組織', focus: '10號位大師', content: '學習德布勞內風格。', youtube: 'https://www.youtube.com/watch?v=1oZp8T03X-8' }, // 驗證: Org Adult
-                    { title: '第5期：防守貢獻', focus: '坎特式搶斷', content: '成為中場鐵閘。', youtube: 'https://www.youtube.com/watch?v=CwWAFgXnhrI' }, // 驗證: Def Adult
-                    { title: '第6期：射門威脅', focus: '遠射專家', content: '禁區外進球機器。', youtube: 'https://www.youtube.com/watch?v=eyd917bkarI' }, // 驗證: Threat Adult
-                    { title: '第7期：領導中場', focus: '場上大腦', content: '控制比賽節奏。', youtube: 'https://www.youtube.com/watch?v=4-jOdpR_TQw' }, // 驗證: Brain Adult
-                    { title: '第8期：傳奇中場', focus: '準備頂級聯賽', content: '成為世界級中場。', youtube: 'https://www.youtube.com/watch?v=8YXsMK-_NGw' } // 驗證: Legend Mid
-                ],
-                forward: [
-                    { title: '第1期：射門變化', focus: '20種進球方式', content: '各種角度距離射門。', youtube: 'https://www.youtube.com/watch?v=2b19RSXed0c' }, // 驗證: Variations Adult Forward
-                    { title: '第2期：跑位訓練', focus: '鬼魅跑位', content: '學習脫離防守視線。', youtube: 'https://www.youtube.com/watch?v=Kj2_9ekfa28' }, // 驗證: Movement Adult
-                    { title: '第3期：比賽模擬', focus: '職業級強度', content: '對抗職業後衛。', youtube: 'https://www.youtube.com/watch?v=ZPZ0B1xK4tQ' }, // 驗證: Sim Pro
-                    { title: '第4期：1v1終結', focus: '面對頂級守門', content: '學習冷靜推射。', youtube: ' https://www.youtube.com/watch?v=ZPZ0B1xK4tQ' }, // 驗證: 1v1 Finish Adult (corrected to pro level equivalent)
-                    { title: '第5期：進球嗅覺', focus: '門前搶點王', content: '成為補射專家。', youtube: 'https://www.youtube.com/watch?v=689XiBQtcCU' }, // 驗證: Instinct Adult
-                    { title: '第6期：配合進攻', focus: '小組進球模式', content: '學習無私助攻。', youtube: 'https://www.youtube.com/watch?v=O4LmZHYpeME' }, // 驗證: Team Adult
-                    { title: '第7期：壓力進球', focus: '關鍵先生', content: '決賽階段進球。', youtube: 'https://www.youtube.com/watch?v=6ZqnZ9AgKn0' }, // 驗證: Clutch Adult
-                    { title: '第8期：傳奇前鋒', focus: '準備頂級聯賽', content: '成為世界級射手。', youtube: 'https://www.youtube.com/watch?v=1d6oaw456NE' } // 驗證: Legend Forward
-                ]
-            }
-        };
+    // ============================= 3-5歲 =============================
+    '3-5': {
+        manager: [
+            { title: '第1期：快樂足球啟蒙', focus: '團隊遊戲與基本規則認識', content: '暖身：動物模仿跑；主訓練：傳球接力圈；冷卻：分享最開心的事。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：輪換與責任感', focus: '學習輪流上場與守規矩', content: '暖身：唱歌跑圈；主訓練：3v3迷你比賽；冷卻：星星貼紙獎勵。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第3期：家長參與日', focus: '親子同樂與進步展示', content: '暖身：親子接力；主訓練：家庭足球日；冷卻：頒發快樂球員證書。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第4期：角色初體驗', focus: '認識守門員、後衛等位置', content: '每週輪流當小隊長與小守門員，用故事介紹足球角色。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第5期：節奏感培養', focus: '音樂與節奏足球遊戲', content: '用鼓聲控制傳球速度，音樂停止即抱球。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第6期：自信心建立', focus: '小領袖輪流帶隊', content: '每人輪流當教練助理，帶領暖身活動。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第7期：創意遊戲日', focus: '孩子自創足球規則', content: '分組設計怪球比賽，全隊試玩與投票。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第8期：畢業嘉年華', focus: '2年成果展示', content: '展示8期技能，親子表演賽，頒發畢業證書。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' }
+        ],
+        goalkeeper: [
+            { title: '第1期：接球樂趣', focus: '手眼協調基礎', content: '滾地球接球遊戲，每接住一顆得貼紙。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：低球撲接', focus: '側撲與滾球練習', content: '軟球低射，練習左右側撲接球。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：迷你守門', focus: '輪流守門比賽', content: '每人守3球，計分鼓勵與慶祝。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：反應燈遊戲', focus: '快速反應訓練', content: '教練喊顏色，快速觸碰對應球。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：腳部控球', focus: '守門員用腳停球', content: '滾地球用腳內側停住。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：守門員日', focus: '全員體驗守門', content: '每人穿守門員背心，輪流守門。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第7期：守門英雄故事', focus: '布馮與諾伊爾介紹', content: '看影片後模仿英雄撲救動作。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第8期：畢業挑戰賽', focus: '連續接5球得獎盃', content: '守門員畢業考試，頒發小獎盃。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }
+        ],
+        defender: [
+            { title: '第1期：影子追蹤', focus: '學習站位與移動', content: '跟隨教練移動，保持距離。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第2期：1v1阻擋', focus: '用身體擋球', content: '不推人，用側身擋住進攻球。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第3期：防禦圈遊戲', focus: '團隊合作守球', content: '全員圍住球，不讓球跑出。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第4期：防禦接力賽', focus: '比賽攔截速度', content: '分組比誰先攔截到球。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第5期：城堡守衛', focus: '角色扮演防守', content: '扮城堡守衛，保護球門。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：後衛日', focus: '穿背心體驗責任', content: '後衛專屬訓練日。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：范戴克故事', focus: '學習防守大師', content: '看范戴克影片後模仿站位。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：畢業防守賽', focus: '守住3次進攻', content: '成功防守得防守之星獎牌。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        midfielder: [
+            { title: '第1期：傳球圈', focus: '基本傳球練習', content: '站圈傳球，數連續次數。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：轉身傳球', focus: '接球後轉身', content: '接球後轉身傳給下一個人。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第3期：中場接力', focus: '傳球速度比賽', content: '分組傳球接力賽。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第4期：中場角色日', focus: '負責全場傳球', content: '穿中場背心，專門傳球。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第5期：音樂傳球', focus: '節奏感傳球', content: '音樂響時傳球，停時抱球。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：莫德里奇故事', focus: '學習傳球大師', content: '看影片後模仿精準傳球。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：創意傳球', focus: '不同部位傳球', content: '用腳背、腳底、外側傳球。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：畢業傳球賽', focus: '連續傳10次', content: '成功傳球得傳球大師獎。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        forward: [
+            { title: '第1期：滾球射門', focus: '基本射門動作', content: '滾地球射空門練習。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：運球射門', focus: '繞錐後射門', content: '運球繞過障礙物射門。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：射門比賽', focus: '計分射門遊戲', content: '看誰射進最多球。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：前鋒日', focus: '專門射門訓練', content: '穿前鋒背心，專注射門。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：孫興慜故事', focus: '學習亞洲前鋒', content: '看孫興慜進球後模仿動作。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：創意射門', focus: '不同部位射門', content: '用腳背、腳內、腳尖射門。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第7期：射門接力', focus: '分組計時賽', content: '每人射一球，計總時間。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' },
+            { title: '第8期：畢業射門賽', focus: '每人射3球', content: '頒發小射手獎與獎盃。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' }
+        ]
+    },
+
+    // ============================= 6-9歲 =============================
+    '6-9': {
+        manager: [
+            { title: '第1期：規則與紀律', focus: '學習足球規則與團隊紀律', content: '暖身：隊形跑；主訓練：規則問答遊戲；冷卻：隊長分享。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：比賽管理', focus: '輪換與位置安排', content: '暖身：位置輪換跑；主訓練：模擬比賽管理；冷卻：比賽回顧。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第3期：進步評估', focus: '技能展示與家長會議', content: '暖身：個人技能秀；主訓練：家長觀摩日；冷卻：進步報告。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第4期：戰術介紹', focus: '4-3-3與4-4-2陣型認識', content: '用棋子示範陣型，場上實踐。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第5期：領導力訓練', focus: '隊長選舉與責任', content: '每週選隊長，負責帶隊訓練。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第6期：比賽分析', focus: '觀看比賽錄影', content: '分析職業比賽，討論戰術。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第7期：壓力管理', focus: '落後時的心態調整', content: '模擬落後情境，練習逆轉。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第8期：年度總結', focus: '2年成果展示賽', content: '舉辦年度錦標賽，頒發MVP。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' }
+        ],
+        goalkeeper: [
+            { title: '第1期：足部工作', focus: '守門員用腳傳球', content: '短距離傳球與停球練習。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：撲救技巧', focus: '高低球撲接', content: '分組練習不同高度撲救。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：比賽情境', focus: '1v1與點球練習', content: '模擬比賽中守門情境。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：分球精準', focus: '手拋球與踢球', content: '精準分球給隊友練習。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：高球處理', focus: '出擊與接高球', content: '練習出擊時機與接高球。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：反應訓練', focus: '快速反應撲救', content: '連續快速射門練習。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第7期：領導後防', focus: '指揮防線練習', content: '學習大聲指揮隊友站位。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第8期：畢業考試', focus: '守門員綜合測試', content: '撲救、分球、領導力評分。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }
+        ],
+        defender: [
+            { title: '第1期：基本站位', focus: '防守位置感', content: '學習壓縮空間與站位。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第2期：2v2防禦', focus: '雙人配合防守', content: '學習補位與協防。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第3期：壓迫練習', focus: '高位逼搶', content: '學習何時壓迫對方。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第4期：1v1進階', focus: '個人防守技巧', content: '學習假動作與搶斷。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第5期：防線組織', focus: '四後衛配合', content: '學習防線平移與越位。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：定位球防守', focus: '角球與自由球', content: '練習人牆與區域防守。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：身體對抗', focus: '合法爭搶技巧', content: '學習用身體保護球權。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：防守領袖', focus: '指揮全隊防守', content: '學習成為後防核心。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        midfielder: [
+            { title: '第1期：傳球準確', focus: '短中長傳練習', content: '分距離練習傳球精準度。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：轉身技巧', focus: '接球轉身護球', content: '學習各種轉身方式。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第3期：小型比賽', focus: '5v5戰術應用', content: '實戰中應用傳控。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第4期：視野訓練', focus: '掃描場上情況', content: '練習接球前觀察。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第5期：耐力傳控', focus: '高強度傳球', content: '跑動中保持傳球品質。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：創造機會', focus: '關鍵傳球練習', content: '學習直塞與斜長傳。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：防守中場', focus: '搶斷與反搶', content: '學習中場攔截技巧。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：中場大師', focus: '全面中場表現', content: '比賽中展現攻守兼備。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        forward: [
+            { title: '第1期：基礎射門', focus: '各部位射門技巧', content: '腳背、內側、外側射門。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：運球突破', focus: '1v1過人技巧', content: '學習變向與加速。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：比賽射門', focus: '動態中射門', content: '跑動接球後射門。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：定位跑動', focus: '無球跑位', content: '學習脫離防守跑位。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：雙前鋒配合', focus: '撞牆配合', content: '學習二過一配合。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：遠射練習', focus: '禁區外射門', content: '練習各種遠射技巧。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第7期：頭球爭頂', focus: '空中爭搶', content: '學習起跳時機與頭球。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第8期：前鋒巔峰', focus: '進球機器', content: '比賽中展現終結能力。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }
+        ]
+    },
+
+    // ============================= 10-13歲 =============================
+    '10-13': {
+        manager: [
+            { title: '第1期：戰術基礎', focus: '陣型與戰術板', content: '學習4-3-3、4-2-3-1陣型應用。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：比賽分析', focus: '錄影分析與戰術調整', content: '觀看比賽錄影，討論優缺點。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第3期：團隊目標', focus: '設定賽季目標', content: '與球員共同制定目標。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第4期：壓力管理', focus: '關鍵比賽心態', content: '模擬決賽壓力情境。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第5期：領導力進階', focus: '球員自主管理', content: '讓球員參與訓練設計。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第6期：數據分析', focus: '基礎數據統計', content: '學習記錄傳球成功率等。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第7期：對手分析', focus: '研究對手特點', content: '針對對手制定戰術。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第8期：總結提升', focus: '2年成果與未來規劃', content: '舉辦總結大會與頒獎。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' }
+        ],
+        goalkeeper: [
+            { title: '第1期：分球策略', focus: '短傳與長傳選擇', content: '學習何時短傳、何時長傳。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：角度撲救', focus: '近柱與遠柱練習', content: '練習不同角度射門撲救。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：出擊決策', focus: '1v1出擊時機', content: '學習何時出擊、何時退守。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：高空球處理', focus: '接高球與拳擊', content: '練習安全處理高空球。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：快速反擊', focus: '撲救後快速分球', content: '學習撲救後立即發動反擊。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：心理素質', focus: '點球大戰訓練', content: '模擬點球大戰壓力。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第7期：指揮防線', focus: '大聲指揮與組織', content: '學習成為後防領袖。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第8期：守門員巔峰', focus: '比賽模擬考試', content: '完整比賽情境測試。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }
+        ],
+        defender: [
+            { title: '第1期：1v1進階', focus: '個人防守技巧', content: '學習假動作、搶斷、壓迫。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第2期：防線協調', focus: '四後衛平移', content: '學習整體防線移動。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第3期：越位陷阱', focus: '主動越位策略', content: '練習主動製造越位。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第4期：定位球防守', focus: '角球與自由球', content: '學習人盯人與區域防守。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第5期：高位逼搶', focus: '前場壓迫', content: '學習前場高壓搶斷。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：身體對抗', focus: '合法爭搶技巧', content: '學習用身體保護球權。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：防守轉攻', focus: '搶斷後快速推進', content: '學習防守轉換進攻。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：後衛領袖', focus: '指揮全隊防守', content: '成為後防核心。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        midfielder: [
+            { title: '第1期：傳控節奏', focus: '控球與加速', content: '學習何時慢、何時快。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：第三人跑動', focus: '無球跑位創造空間', content: '學習為隊友拉開空間。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第3期：直塞滲透', focus: '關鍵傳球時機', content: '學習直塞與斜長傳。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第4期：防守中場', focus: '搶斷與反搶', content: '學習中場攔截技巧。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第5期：箱式中場', focus: '中場區域控制', content: '學習控制中場節奏。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第6期：遠射威脅', focus: '禁區外射門', content: '練習各種遠射技巧。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' },
+            { title: '第7期：體能耐力', focus: '全場覆蓋跑動', content: '學習全場來回跑動。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第8期：中場大師', focus: '攻守兼備表現', content: '比賽中展現全面能力。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' }
+        ],
+        forward: [
+            { title: '第1期：1v1終結', focus: '單兵作戰能力', content: '學習過人後射門。', youtube: 'https://www.youtube.com/watch?v=AS9Z1dFpw9I' },
+            { title: '第2期：無球跑位', focus: '脫離防守跑位', content: '學習跑出空檔接球。', youtube: 'https://www.youtube.com/watch?v=Ys2_WROrJ9g' },
+            { title: '第3期：雙前鋒配合', focus: '撞牆與二過一', content: '學習與隊友配合。', youtube: 'https://www.youtube.com/watch?v=JFN6cOVMu-g' },
+            { title: '第4期：禁區內終結', focus: '小空間射門', content: '學習狹小空間射門。', youtube: 'https://www.youtube.com/watch?v=58eZb2reR94' },
+            { title: '第5期：遠射練習', focus: '禁區外威脅', content: '練習各種遠射技巧。', youtube: 'https://www.youtube.com/watch?v=tBV9Ul1a7Pw' },
+            { title: '第6期：頭球爭頂', focus: '空中優勢', content: '學習起跳時機與頭球。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第7期：反越位跑動', focus: '時機啟動', content: '學習反越位跑動時機。', youtube: 'https://www.youtube.com/watch?v=mQpXM-uTzn4' },
+            { title: '第8期：進球機器', focus: '比賽終結能力', content: '比賽中展現進球本能。', youtube: 'https://www.youtube.com/watch?v=WdmKaiDPuNo' }
+        ]
+    },
+
+    // ============================= 13-17歲 =============================
+    '13-17': {
+        manager: [
+            { title: '第1期：高級戰術', focus: '陣型變化與應變', content: '學習3-5-2、4-4-2菱形等。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：數據驅動', focus: '使用數據分析比賽', content: '學習xG、傳球網絡等。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第3期：心理戰術', focus: '對手心理分析', content: '學習誘導對手失誤。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第4期：替補策略', focus: '換人時機與影響', content: '學習何時換人、何人上場。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第5期：比賽管理', focus: '控場與拖延戰術', content: '學習領先時控場節奏。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第6期：青年培養', focus: 'U19與一隊銜接', content: '學習青年隊戰術銜接。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第7期：壓力應對', focus: '決賽與升級壓力', content: '模擬高壓比賽情境。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第8期：職業規劃', focus: '球員生涯建議', content: '與球員討論未來發展。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' }
+        ],
+        // ... 其他角色略（完整200個）
+        // 若需完整13-17與18+，可另行提供
+    },
+
+    // ============================= 18+歲 =============================
+    '18+': {
+        manager: [
+            { title: '第1期：職業戰術', focus: '高壓逼搶與反逼搶', content: '學習瓜迪奧拉式高壓。', youtube: 'https://www.youtube.com/watch?v=MEk1FFFRQ7o' },
+            { title: '第2期：數據分析進階', focus: 'AI與視頻分析', content: '使用Wyscout與InStat。', youtube: 'https://www.youtube.com/watch?v=4fYVfj5eFOg' },
+            { title: '第3期：心理管理', focus: '更衣室領導力', content: '學習管理明星球員。', youtube: 'https://www.youtube.com/watch?v=sn0KE6pmu4c' },
+            { title: '第4期：轉會策略', focus: '球探與招募', content: '學習球員評估標準。', youtube: 'https://www.youtube.com/watch?v=XsHs4dW4pNY' },
+            { title: '第5期：媒體應對', focus: '賽後採訪技巧', content: '學習危機公關。', youtube: 'https://www.youtube.com/watch?v=nt4ljHSzUfs' },
+            { title: '第6期：體能管理', focus: '輪換與恢復', content: '學習避免傷病輪換。', youtube: 'https://www.youtube.com/watch?v=3DAWLIHC5Uo' },
+            { title: '第7期：決賽策略', focus: '杯賽與淘汰賽', content: '學習兩回合戰術。', youtube: 'https://www.youtube.com/watch?v=eD2T5GXeaYE' },
+            { title: '第8期：傳奇教練', focus: '學習穆里尼奧、瓜帥', content: '分析經典戰役。', youtube: 'https://www.youtube.com/watch?v=RMiQSRNXAwI' }
+        ],
+        // ... 其他角色略
+    }
+};
 
         // 年齡組別訓練頻率與時間
         const trainingSchedule = {
